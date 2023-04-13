@@ -6,7 +6,7 @@ chmod +x ~/.config/i3/scripts/*
 ```
 
 ```
-sudo pacman -S xcompmgr redshift streamlink bluez bluez-utils blueberry telegram-desktop nvim github-cli npm nodejs ttf-fira-code ttf-hack starship
+sudo pacman -S xcompmgr redshift streamlink bluez bluez-utils blueberry telegram-desktop neovim github-cli npm nodejs ttf-fira-code ttf-hack starship
 systemctl enable bluetooth.service
 ```
 bashrc: # ~/.bashrc 
