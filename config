@@ -18,6 +18,10 @@
 # config starts here: #
 #######################
 
+# set wallpaper
+#exec --no-startup-id sleep 2 && nitrogen --restore
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -212,8 +216,11 @@ bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +5 #&& notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
-bindsym XF86MonBrightnessDown exec xbacklight -5 #G&& notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+#bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+#bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+bindsym XF86MonBrightnessUp exec xbacklight +1
+bindsym XF86MonBrightnessDown exec xbacklight -1
+
 
 
 # change focus
@@ -305,11 +312,11 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 set $ws1 "1:" 
 set $ws2 "2:"
 set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -328,9 +335,10 @@ assign [class="(?i)firefox"] $ws2
 assign [class="mpv"] $ws3
 assign [class="chatterino"] $ws3
 assign [class="streamlink-twitch-gui"] $ws4 
-assign [class="Thunar"] $ws5
-assign [class="Thunderbird"] $ws6
-assign [class="TelegramDesktop"] $ws7
+assign [class="Youtube"] $ws5
+assign [class="Thunar"] $ws6
+assign [class="Thunderbird"] $ws7
+assign [class="TelegramDesktop"] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class="Code"] focus
@@ -340,6 +348,7 @@ for_window [class="Thunderbird"] focus
 for_window [class="TelegramDesktop"] focus
 for_window [class="streamlink-twitch-gui"] focus
 for_window [class="mpv"] focus
+for_window [class="Youtube"] focus
 
 ##############
 # compositor #
@@ -403,10 +412,6 @@ exec --no-startup-id redshift -O 3500
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
-
-# set wallpaper
-#exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
