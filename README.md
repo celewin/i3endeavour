@@ -21,6 +21,6 @@ nvim
 git clone https://github.com/celewin/astrovim ~/.config/nvim/lua/user
 ```
 ```bash
-yay -S visual-studio-code-bin streamlink-twitch-gui chatterino2-git bibata-cursor-theme
+yay -S visual-studio-code-bin streamlink-twitch-gui chatterino2-git bibata-cursor-theme youtube
 ```
 
